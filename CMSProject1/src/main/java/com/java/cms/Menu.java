@@ -1,28 +1,30 @@
 package com.java.cms;
 
 public class Menu {
-	private int menuid;
-	private int restaurantid;
-	private String itemname;
+	
+	private int menuId;
+	private int restaurantId;
+	private String itemName;
 	private String menutype;
-	private String menuprice;
-	public int getMenuid() {
-		return menuid;
+	private int calories;
+	private int price;
+	public int getMenuId() {
+		return menuId;
 	}
-	public void setMenuid(int menuid) {
-		this.menuid = menuid;
+	public void setMenuId(int menuId) {
+		this.menuId = menuId;
 	}
-	public int getRestaurantid() {
-		return restaurantid;
+	public int getRestaurantId() {
+		return restaurantId;
 	}
-	public void setRestaurantid(int restaurantid) {
-		this.restaurantid = restaurantid;
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
 	}
-	public String getItemname() {
-		return itemname;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setItemname(String itemname) {
-		this.itemname = itemname;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	public String getMenutype() {
 		return menutype;
@@ -30,18 +32,23 @@ public class Menu {
 	public void setMenutype(String menutype) {
 		this.menutype = menutype;
 	}
-	public String getPrice() {
-		return menuprice;
+	public int getCalories() {
+		return calories;
 	}
-	public void setPrice(String i) {
-		this.menuprice = i;
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	@Override
 	public String toString() {
-		return "MenuDAO [menuid=" + menuid + ", restaurantid=" + restaurantid + ", itemname=" + itemname + ", menutype="
-				+ menutype + ", menuprice=" + menuprice + "]";
+		return "Menu [menuId=" + menuId + ", restaurantId=" + restaurantId + ", itemName=" + itemName + ", menutype="
+				+ menutype + ", calories=" + calories + ", price=" + price + "]";
 	}
-	
 	
 
 }

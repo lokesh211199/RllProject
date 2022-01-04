@@ -1,4 +1,5 @@
 package com.java.cms;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,58 +8,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDAO {
+
+	
+	
 	Connection connection;
 	PreparedStatement pst;
-	
-	public List <Customer> showCustomer() throws ClassNotFoundException, SQLException {
+	public List<Customer1> showCustomer() throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnection();
-		String cmd = "select * from customer";
+		String cmd = "select * from Customer";
 		pst = connection.prepareStatement(cmd);
-    	ResultSet rs = pst.executeQuery();
-    	List<Customer> customerList = new ArrayList<Customer>();
-    	Customer customer = null;
-    	while(rs.next()) {	
-    		customer=new Customer();
-    		customer.setCustomerid(rs.getInt("customerid"));
-    		customer.setFirstname(rs.getString("firstname"));
-    		customer.setLastname(rs.getString("lastname"));
-    		customer.setGender(rs.getString("Gender"));
-    		customer.setDob(rs.getString("dob"));
-    		customer.setMaritalstatus(rs.getString("maritalstatus"));
-    		customer.setAddress1(rs.getString("address1"));
-    		customer.setAddress2(rs.getString("address2"));
-    		customer.setCustomercity(rs.getString("customercity"));
-    		customer.setCustomerstate(rs.getString("customerstate"));
-    		customer.setZipcode(rs.getString("zipcode"));
-    		customer.setCountry(rs.getString("country"));	
-    		customerList.add(customer);
-    	}
-    	return customerList;
-	}
-	public Customer searchCustomer (int customerid)  throws ClassNotFoundException, SQLException {
-		 connection = ConnectionHelper.getConnection();
-			String cmd = "select * from customer where customerid=?";
-			pst = connection.prepareStatement(cmd);
-			pst.setInt(1, customerid);
-			Customer customer=null;
-			ResultSet rs = pst.executeQuery();
-			if(rs.next()) {
-	    		customer=new Customer();
-	    		customer.setCustomerid(rs.getInt("customerid"));
-	    		customer.setFirstname(rs.getString("firstname"));
-	    		customer.setLastname(rs.getString("lastname"));
-	    		customer.setGender(rs.getString("Gender"));
-	    		customer.setDob(rs.getString("dob"));
-	    		customer.setMaritalstatus(rs.getString("maritalstatus"));
-	    		customer.setAddress1(rs.getString("address1"));
-	    		customer.setAddress2(rs.getString("address2"));
-	    		customer.setCustomercity(rs.getString("customercity"));
-	    		customer.setCustomerstate(rs.getString("customerstate"));
-	    		customer.setZipcode(rs.getString("zipcode"));
-	    		customer.setCountry(rs.getString("country"));
-			}
-		 return customer;
-		 
+		ResultSet rs = pst.executeQuery();
+		List<Customer1> customerList = new ArrayList<Customer1>();
+		Customer1 customer = null;
+		while(rs.next()) {
+			customer = new Customer1();
+			customer.setCustomerid(rs.getInt("customerid"));
+			customer.setCustomername(rs.getString("customername"));
+			customer.setCustomercity(rs.getString("customercity"));
+			customer.setCustomerstate(rs.getString("customerstate"));
+			customer.setCustomeremail(rs.getString("customeremail"));
+			customer.setCustomermobile(rs.getString("customermobile"));
+			customerList.add(customer);
+		}
+		return customerList;
 	}
 
+	public Customer1 searchCustomer(int customerId) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String cmd = "select * from customer where customerid=?";
+		pst = connection.prepareStatement(cmd);
+		pst.setInt(1, customerId);
+		ResultSet rs = pst.executeQuery();
+		Customer1 customer = null;
+		if(rs.next()) {
+			customer = new Customer1();
+			customer.setCustomerid(rs.getInt("customerid"));
+			customer.setCustomername(rs.getString("customername"));
+			customer.setCustomercity(rs.getString("customercity"));
+			customer.setCustomerstate(rs.getString("customerstate"));
+			customer.setCustomeremail(rs.getString("customeremail"));
+			customer.setCustomermobile(rs.getString("customermobile"));
+		}
+		return customer;
+		
+	}
+	
+	
+	
+	
+	
+	
 }

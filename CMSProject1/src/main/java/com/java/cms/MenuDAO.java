@@ -1,57 +1,61 @@
 package com.java.cms;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.event.MenuListener;
-
-import com.java.cms.Menu;
-import com.java.cms.MenuDAO;
 
 public class MenuDAO {
+
+	
 	Connection connection;
 	PreparedStatement pst;
-	
-	public List <Menu> showMenu() throws ClassNotFoundException, SQLException {
+	public List<Menu> showMenu(int restaurantId) throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnection();
-		String cmd = "select * from menu";
+		String cmd = "select * from menu where RESTAURANTID=?";
 		pst = connection.prepareStatement(cmd);
-    	ResultSet rs = pst.executeQuery();
-    	List<Menu> menuList = new ArrayList<Menu>();
-    	Menu menu = null;
-    	while(rs.next()) {	
-    		menu=new Menu();
-    		menu.setMenuid(rs.getInt("menuid"));
-    		menu.setRestaurantid(rs.getInt("restaurantid"));
-    		menu.setItemname(rs.getString("itemname"));
-    		menu.setMenutype(rs.getString("menutype"));
-    		menu.setPrice(rs.getString("menuprice"));
-    		
-    		menuList.add(menu);
-    	}
-    	return menuList;
+		pst.setInt(1, restaurantId);
+		ResultSet rs = pst.executeQuery();
+		List<Menu> menuList = new ArrayList<Menu>();
+		Menu menu = null;
+		while(rs.next()) {
+			menu = new Menu();
+			menu.setMenuId(rs.getInt("menuid"));
+			menu.setRestaurantId(rs.getInt("restaurantid"));
+			menu.setItemName(rs.getString("itemname"));
+			menu.setMenutype(rs.getString("menutype"));
+			menu.setCalories(rs.getInt("calories"));
+			menu.setPrice(rs.getInt("Price"));
+			menuList.add(menu);
+		}
+		return menuList;
 	}
 	
-	public Menu searchMenu(int menuid)  throws ClassNotFoundException, SQLException {
-		 connection = ConnectionHelper.getConnection();
-			String cmd = "select * from menu where menuid=?";
-			pst = connection.prepareStatement(cmd);
-			pst.setInt(1, menuid);
-			Menu menu=null;
-			ResultSet rs = pst.executeQuery();
-			if(rs.next()) {
-	    		menu=new Menu();
-	    		menu.setMenuid(rs.getInt("menuid"));
-	    		menu.setRestaurantid(rs.getInt("restaurantid"));
-	    		menu.setItemname(rs.getString("itemname"));
-	    		menu.setMenutype(rs.getString("menutype"));
-	    		menu.setPrice(rs.getString("menuprice"));
-			}
-		 return menu;
-		 
+	
+	public Menu searchMenu(int menuId) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String cmd = "select * from menu where menuid=?";
+		pst = connection.prepareStatement(cmd);
+		pst.setInt(1, menuId);
+		ResultSet rs = pst.executeQuery();
+		Menu menu = null;
+		if(rs.next()) {
+			menu = new Menu();
+			menu.setMenuId(rs.getInt("menuid"));
+			menu.setRestaurantId(rs.getInt("restaurantid"));
+			menu.setItemName(rs.getString("itemname"));
+			menu.setMenutype(rs.getString("menutype"));
+			menu.setCalories(rs.getInt("calories"));
+			menu.setPrice(rs.getInt("Price"));
+		}
+		return menu;
+		
 	}
+	
+	
+	
+	
 }
