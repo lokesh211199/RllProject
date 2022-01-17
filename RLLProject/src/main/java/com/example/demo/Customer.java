@@ -1,55 +1,55 @@
 package com.example.demo;
 
 public class Customer {
-
-	private int Customerid;
-	private String Customername;
-	private String Customercity;
-	private String Customerstate;
-	private String Customeremail;
-	private String Customermobile;
+	   private int customerid;
+	   
+	   private String customername;
+	   private String customerstate;
+	   private String customercity;
+	   private String customeremail;
+	   private String customermobile;
 	public int getCustomerid() {
-		return Customerid;
+		return customerid;
 	}
 	public void setCustomerid(int customerid) {
-		Customerid = customerid;
+		this.customerid = customerid;
 	}
 	public String getCustomername() {
-		return Customername;
+		return customername;
 	}
 	public void setCustomername(String customername) {
-		Customername = customername;
-	}
-	public String getCustomercity() {
-		return Customercity;
-	}
-	public void setCustomercity(String customercity) {
-		Customercity = customercity;
+		this.customername = customername;
 	}
 	public String getCustomerstate() {
-		return Customerstate;
+		return customerstate;
 	}
 	public void setCustomerstate(String customerstate) {
-		Customerstate = customerstate;
+		this.customerstate = customerstate;
+	}
+	public String getCustomercity() {
+		return customercity;
+	}
+	public void setCustomercity(String customercity) {
+		this.customercity = customercity;
 	}
 	public String getCustomeremail() {
-		return Customeremail;
+		return customeremail;
 	}
 	public void setCustomeremail(String customeremail) {
-		Customeremail = customeremail;
+		this.customeremail = customeremail;
 	}
 	public String getCustomermobile() {
-		return Customermobile;
+		return customermobile;
 	}
 	public void setCustomermobile(String customermobile) {
-		Customermobile = customermobile;
+		this.customermobile = customermobile;
 	}
 	@Override
 	public String toString() {
-		return "Customer1 [Customerid=" + Customerid + ", Customername=" + Customername + ", Customercity="
-				+ Customercity + ", Customerstate=" + Customerstate + ", Customeremail=" + Customeremail
-				+ ", Customermobile=" + Customermobile + "]";
+		return "Customer [customerid=" + customerid + ", customername=" + customername + ", customerstate="
+				+ customerstate + ", customercity=" + customercity + ", customeremail=" + customeremail
+				+ ", customermobile=" + customermobile + "]";
 	}
 	
-	
+
 }

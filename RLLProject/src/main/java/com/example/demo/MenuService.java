@@ -6,15 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class CustomerService {
+public class MenuService {
 	@Autowired
-	CustomerDAO dao;
+	MenuDAO dao;
 	
-	public Customer[] showCustomer() {
-		return dao.showCustomer();
+	public Menu[] showMenu() {
+		return dao.showMenu();
 	}
-	
-	public Customer searchCustomer(int Cid) {
-		return dao.searchCustomer(Cid);
+	public Menu searchMenu(int menuID) {
+		return dao.searchMenu(menuID);
 	}
 }

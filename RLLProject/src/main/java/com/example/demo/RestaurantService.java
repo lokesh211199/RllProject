@@ -7,15 +7,15 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class RestaurantService {
-
-	@Autowired
-	RestaurantDAO dao;
 	
-	public Restaurant[] showRestaurant() {
-		return dao.showRestaurant();
-	}
-	
-	public Restaurant searchRestaurant(int restaurantid) {
-		return dao.searchRestaurant(restaurantid);
-	}
+		@Autowired
+		RestaurantDAO dao;
+		
+		public Restaurant[] showRestaurant() {
+			return dao.showRestaurant();
+		}
+		public Restaurant searchRestaurant(int restaurantid) {
+			return dao.searchRestaurant(restaurantid);
+		}
 }
+

@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CustomerController {
-
+	
 	@Autowired
 	private CustomerService customerService;
 	
-	@RequestMapping("/")
+	@RequestMapping("/cust")
 	public Customer[] show() {
 		return customerService.showCustomer();
+		
 	}
-	
-	@RequestMapping("/{customerid}")
+	@RequestMapping("/cust/{customerid}")
 	public Customer searchCustomer(@PathVariable int customerid) {
 		return customerService.searchCustomer(customerid);
 	}

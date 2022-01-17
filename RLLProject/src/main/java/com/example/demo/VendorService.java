@@ -6,15 +6,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class CustomerService {
+public class VendorService {
+
 	@Autowired
-	CustomerDAO dao;
+	VendorDAO dao;
 	
-	public Customer[] showCustomer() {
-		return dao.showCustomer();
+	public Vendor[] showVendor() {
+		return dao.showVendor();
 	}
 	
-	public Customer searchCustomer(int Cid) {
-		return dao.searchCustomer(Cid);
+	public Vendor searchVendor(int vendorid) {
+		return dao.searchVendor(vendorid);
 	}
 }

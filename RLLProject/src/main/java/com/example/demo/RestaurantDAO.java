@@ -15,9 +15,9 @@ public class RestaurantDAO {
 	@Autowired
     JdbcTemplate jdbcTemplate;
 
-	public Restaurant searchRestaurant(int rid) {
-		String cmd = "select * from Restaurant where rid=?";
-		List<Restaurant> restaurantList = jdbcTemplate.query(cmd, new Object[] {rid}, new RowMapper() {
+	public Restaurant searchRestaurant(int restaurantid) {
+		String cmd = "select * from Restaurant where restaurantid=?";
+		List<Restaurant> restaurantList = jdbcTemplate.query(cmd, new Object[] {restaurantid}, new RowMapper() {
 
 			@Override
 			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {

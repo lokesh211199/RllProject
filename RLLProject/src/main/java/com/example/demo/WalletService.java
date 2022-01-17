@@ -6,15 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class CustomerService {
+public class WalletService {
 	@Autowired
-	CustomerDAO dao;
+	WalletDAO dao;
 	
-	public Customer[] showCustomer() {
-		return dao.showCustomer();
+	public Wallet[] showWallet() {
+		return dao.showWallet();
 	}
-	
-	public Customer searchCustomer(int Cid) {
-		return dao.searchCustomer(Cid);
+	public Wallet searchWallet(int walletid) {
+		return dao.searchWallet(walletid);
 	}
 }
