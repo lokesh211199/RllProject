@@ -1,0 +1,23 @@
+<p>vendor-dash-board works!</p>
+Vendor Id : {{vendor.vendorid}} <br/> 
+Vendor Name : {{vendor.vendorname}} <br/>
+Vendor City : {{vendor.vendorcity}} <br/> 
+Vendor State : {{vendor.vendorstate}} <br/>
+Vendor Email : {{vendor.vendoremail}} <br/> 
+Vendor Mobile : {{vendor.vendormobile}} <br/>
+<hr/>
+<br/>
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showRestaurant']}}]"> Show Restaurant</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <a [routerLink]="['ShowRestaurant']">Show Restaurant</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVOrders']}}]">Vendor Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVPOrders']}}]">Vendor Pending Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['vendorPendingOrders']">Vendor Pending Orders</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['addvendor']">Add Vendor</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVendor']}}]"> Show All Vendors</a> 
+<!-- <a [routerLink]="['showAllCustomers']">Show All Customers</a>  -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hr/><hr/>
+<router-outlet name="mphasis"></router-outlet>

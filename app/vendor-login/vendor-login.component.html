@@ -1,0 +1,14 @@
+<p>vendor-login works!</p>
+
+<form (ngSubmit)="logMe()">
+    Select Vendor Name : 
+    <select [(ngModel)]="vendorid" name="vendorId">
+        <option *ngFor="let v of vendors" value={{v.vendorid}}>
+            {{v.vendorname}}
+        </option>
+    </select> <br/><br/> 
+    Password : 
+    <input type="password" name="passWord" [(ngModel)]="passcode" /> 
+    <br/><br/> 
+    <input type="submit" value="Login" />
+</form>
