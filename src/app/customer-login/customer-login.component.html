@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <body>
+        <div>
+        <h1>sign in to your account</h1>
+        <form (ngSubmit)="logMe()">
+        <b>User Name : </b>
+            <select [(ngModel)]="customerId" name="customerId" style="text-decoration: rgb(243, 238, 239)"> 
+                <option *ngFor="let c of customers" value={{c.customerid}} >
+                    {{c.customername}}
+                </option>
+            </select>
+             <br/><br/> 
+        <b>Password : </b>
+            <input type="PassWord" name="PassWord" [(ngModel)]="passCode"  placeholder="**"/>
+            <br/><br/> 
+            <button><input type="submit" value="sign in" /></button>
+        </form>
+    </div>
+    </body>
+</html>
