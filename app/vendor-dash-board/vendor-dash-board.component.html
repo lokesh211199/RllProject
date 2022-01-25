@@ -1,12 +1,21 @@
-<p>vendor-dash-board works!</p>
+<!doctype html>
+<html>
+    <body>
+        <div>
+<h1>VENDOR DASH-BOARD WORKS!</h1>
+<span style="color: goldenrod;
+background: black;">
 Vendor Id : {{vendor.vendorid}} <br/> 
 Vendor Name : {{vendor.vendorname}} <br/>
 Vendor City : {{vendor.vendorcity}} <br/> 
 Vendor State : {{vendor.vendorstate}} <br/>
 Vendor Email : {{vendor.vendoremail}} <br/> 
 Vendor Mobile : {{vendor.vendormobile}} <br/>
+</span>
 <hr/>
 <br/>
+<button aria-colspan="showAllCustomers,showRestaurant,showCustomer,showCustomerWallet,placeOrder,showCOrders,showCPOrders;
+ background: darkblue;">
 <a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showRestaurant']}}]"> Show Restaurant</a> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a [routerLink]="['ShowRestaurant']">Show Restaurant</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
@@ -14,10 +23,15 @@ Vendor Mobile : {{vendor.vendormobile}} <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVPOrders']}}]">Vendor Pending Orders</a> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['vendorPendingOrders']">Vendor Pending Orders</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['accept-or-reject']}}]">Accept or Reject Orders</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a [routerLink]="['addvendor']">Add Vendor</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVendor']}}]"> Show All Vendors</a> 
-<!-- <a [routerLink]="['showAllCustomers']">Show All Customers</a>  -->
+<!-- <a [routerLink]="['showAllVendors']">Show All Vendors</a>  -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</button>
 <hr/><hr/>
 <router-outlet name="mphasis"></router-outlet>
+        </div>
+    </body>
+</html>

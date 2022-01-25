@@ -9,11 +9,12 @@ import { OrdersService } from '../orders.service';
 })
 export class CustomerOrdersComponent implements OnInit {
 
-  customerid : number;
+  customerId : number;
   orders : Orders [];
+  
   constructor(private _ordersService : OrdersService) { 
-    this.customerid = parseInt(localStorage.getItem("customerId"));
-    this._ordersService.showCOrders(this.customerid).subscribe(x => {
+    this.customerId = parseInt(localStorage.getItem("customerId"));
+    this._ordersService.showCOrders(this.customerId).subscribe(x => {
       this.orders=x;
     })
 //    this.orders = this._ordersService.showCOrders(this.customerid);

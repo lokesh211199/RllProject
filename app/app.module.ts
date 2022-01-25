@@ -17,6 +17,10 @@ import { CustomerOrdersComponent } from './customer-orders/customer-orders.compo
 import { CustomerPendingOrdersComponent } from './customer-pending-orders/customer-pending-orders.component';
 import { VendorOrdersComponent } from './vendor-orders/vendor-orders.component';
 import { VendorPendingOrdersComponent } from './vendor-pending-orders/vendor-pending-orders.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
+import { WalletCustomerComponent } from './wallet-customer/wallet-customer.component';
+import { AcceptOrRejectComponent } from './accept-or-reject/accept-or-reject.component';
+//import { OrderSearchComponent } from './order-search/order-search.component';
 
 const appRoutes : Routes = [
   {path:'',component:HomePageComponent},
@@ -29,7 +33,9 @@ const appRoutes : Routes = [
      {path:'showRestaurant',component:RestaurantShowComponent,outlet:'mphasis'},
      {path:'showCOrders',component:CustomerOrdersComponent,outlet:'mphasis'},
      {path:'showCPOrders',component:CustomerPendingOrdersComponent,outlet:'mphasis'},
-     {path:'showCustomer',component:CustomerShowComponent,outlet:'mphasis'}
+     {path:'showCustomer',component:CustomerShowComponent,outlet:'mphasis'},
+     {path:'showCustomerWallet',component:WalletCustomerComponent,outlet:'mphasis'},
+     {path:'placeOrder',component:PlaceOrderComponent,outlet:'mphasis'}
    ]
  },
  {path:'vendDashBoard',component:VendorDashBoardComponent,
@@ -37,7 +43,8 @@ const appRoutes : Routes = [
       {path:'showRestaurant',component:RestaurantShowComponent,outlet:'mphasis'},
       {path:'showVOrders',component:VendorOrdersComponent,outlet:'mphasis'},
       {path:'showVPOrders',component:VendorPendingOrdersComponent,outlet:'mphasis'},
-      {path:'showVendor',component:VendorShowComponent,outlet:'mphasis'}
+      {path:'showVendor',component:VendorShowComponent,outlet:'mphasis'},
+      {path : "accept-or-reject",component:AcceptOrRejectComponent,outlet:'mphasis'}
     ]
 
  }
@@ -57,7 +64,11 @@ const appRoutes : Routes = [
     CustomerOrdersComponent,
     CustomerPendingOrdersComponent,
     VendorOrdersComponent,
-    VendorPendingOrdersComponent
+    VendorPendingOrdersComponent,
+    PlaceOrderComponent,
+    WalletCustomerComponent,
+    AcceptOrRejectComponent,
+    //OrderSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,23 @@
-<p>customer-login works!</p>
-
-<form (ngSubmit)="logMe()">
-    Select Customer Name : 
-    <select [(ngModel)]="customerId" name="customerId">
-        <option *ngFor="let c of customers" value={{c.customerid}}>
-            {{c.customername}}
-        </option>
-    </select> <br/><br/> 
-    Password : 
-    <input type="password" name="passWord" [(ngModel)]="passCode" /> 
-    <br/><br/> 
-    <input type="submit" value="Login" />
-</form>
+<!doctype html>
+<html>
+    <body>
+        <div class="bg-img"> 
+            <form action="/action_page.php" class="container">
+        <h1>Sign In To Your Account</h1>
+        <form (ngSubmit)="logMe()">
+        <b>Customer Name : </b>
+            <select [(ngModel)]="customerId" name="customerId" style="text-decoration: rgb(243, 238, 239)"> 
+                <option *ngFor="let c of customers" value={{c.customerid}} >
+                    {{c.customername}}
+                </option>
+            </select>
+             <br/><br/> 
+        <b>Password : </b>
+            <input type="PassWord" name="PassWord" [(ngModel)]="passCode"  placeholder="**"/>
+            <br/><br/> 
+            <button type="submit" class="btn"> Signin </button>
+        </form>
+    </form>
+    </div>
+    </body>
+</html>

@@ -12,10 +12,10 @@ export class VendorDashBoardComponent implements OnInit {
   vendorId : number;
   vendor : Vendor;
 
-  constructor(private _vendorSerivice : VendorService) { 
+  constructor(private _vendorService : VendorService) { 
 
     this.vendorId = parseInt(localStorage.getItem("vendId"));
-    this._vendorSerivice.searchVendor(this.vendorId).subscribe(x => {
+    this._vendorService.searchVendor(this.vendorId).subscribe(x => {
       this.vendor=x;
     })
   }

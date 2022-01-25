@@ -1,0 +1,80 @@
+h3 {
+    text-shadow: 2px 2px red;
+    color: black;
+    text-align: top;
+    padding: 6px;
+}
+table {
+    border-collapse: collapse;
+    width: 70%;
+    background-color: white;
+    margin-left: 50px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 9px;
+  }
+body, html {
+    height: 100%;
+    text-align: left;
+  }
+  
+  * {
+    box-sizing: border-box;
+    -moz-box-align: center;
+    left: 100px;
+  }
+  
+  /* Add styles to the form container */
+  .container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    text-orientation: sideways-right;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  html{
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)), url("../../assets/images/images.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 725px;
+    margin: 0;
+  }
+  span {
+      text-align: center;
+      text-emphasis-position: right;
+  }

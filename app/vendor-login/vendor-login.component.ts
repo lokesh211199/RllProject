@@ -16,7 +16,7 @@ export class VendorLoginComponent implements OnInit {
 
   logMe(){
     //alert(this.vendorId);
-    localStorage.setItem('vendorid',this.vendorid.toString());
+    localStorage.setItem('vendId',this.vendorid.toString());
     if (this.passcode=="Mphasis") {
       this._router.navigate(['/vendorDashBoard'])
     }

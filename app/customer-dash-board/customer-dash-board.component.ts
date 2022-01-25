@@ -9,11 +9,11 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerDashBoardComponent implements OnInit {
 
-  cid : number;
+  customerid : number;
   customer : Customer;
   constructor(private _customerService : CustomerService) { 
-    this.cid = parseInt(localStorage.getItem("customerId"));
-    this._customerService.searchCustomer(this.cid).subscribe(x => {
+    this.customerid = parseInt(localStorage.getItem("customerId"));
+    this._customerService.searchCustomer(this.customerid).subscribe(x => {
       this.customer=x;
     })
 //    this.customer = this._customerService.searchCustomer(this.cid);

@@ -1,0 +1,22 @@
+h3 {
+    text-shadow: 2px 2px red;
+    color: gold;
+    background-color: black;
+    text-align: top;
+    position: top;
+    display: table-row;
+}
+body {
+    text-align:left;
+    text-shadow: goldenrod;
+    padding: auto;
+    border: solid;
+    color: black;
+    background-color: goldenrod;
+    padding: 25px 100px; 
+    text-align: left;
+    text-decoration: black;
+    display: table-cell;
+    font-size: 16px;
+    border-radius: 200px;
+}

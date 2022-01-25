@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Wallet } from './wallet';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Customer } from './customer';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class WalletService {
 
   constructor(private _http: HttpClient) { }
 
-  showCustomer(): Observable<Customer []> {
-    return this._http.get<Customer[]>("http://localhost:8282/showCustomer")
+  showCustomerWallet(customerid : number): Observable<Wallet []> {
+    return this._http.get<Wallet[]>("http://localhost:8282/showAllWallets/"+customerid)
       .pipe(
         tap(data =>
         console.log('All: ' + JSON.stringify(data)))
       );
   }
-  searchCustomer(customerid : number): Observable<Customer> {
-    return this._http.get<Customer>("http://localhost:8282/searchCustomer/"+customerid)
+  searchByWalletId(walletid : number): Observable<Wallet> {
+    return this._http.get<Wallet>("http://localhost:8282/searchByWalletId/"+walletid)
       .pipe(
         tap(data =>
         console.log('All: ' + JSON.stringify(data)))

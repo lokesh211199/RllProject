@@ -1,12 +1,30 @@
-<p>customer-dash-board works!</p>
-Customer Id : {{customer.customerid}} <br/> 
-Customer Name : {{customer.customername}} <br/>
-Customer City : {{customer.customercity}} <br/> 
-Customer State : {{customer.customerstate}} <br/>
-Customer Email : {{customer.customeremail}} <br/> 
-Customer Mobile : {{customer.customermobile}} <br/>
+<!doctype html>
+<html>
+    <body>
+        <div>
+<h3>CUSTOMER-DASHBOARD</h3>
+   <table table border="3" >
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th>STATE</th>
+        <th>EMAIL</th>
+        <th>MOBILE</th>
+    </tr>
+    <tr>
+        <td>{{customer.customerid}}</td>
+        <td>{{customer.customername}}</td>
+        <td>{{customer.customercity}}</td>
+        <td>{{customer.customerstate}}</td>
+        <td>{{customer.customeremail}}</td>
+        <td>{{customer.customermobile}}</td>
+    </tr>
+</table>
 <hr/>
 <br/>
+ <button aria-colspan="showAllCustomers,showRestaurant,showCustomer,showCustomerWallet,placeOrder,showCOrders,showCPOrders;
+ background: darkblue;">
 <a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['showRestaurant']}}]"> Show Restaurant</a> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a [routerLink]="['ShowRestaurant']">Show Restaurant</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
@@ -15,9 +33,14 @@ Customer Mobile : {{customer.customermobile}} <br/>
 <a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['showCPOrders']}}]">Customer Pending Orders</a> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a [routerLink]="['addCustomer']">Add Customer</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['placeOrder']">Place Order</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['showCustomer']}}]"> Show All Customer</a> 
+<a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['placeOrder']}}]"> Place Order</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['showCustomerWallet']}}]"> Show Customer Wallet</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/custDashBoard',{outlets: {'mphasis': ['showCustomer']}}]"> Show All Customer</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a [routerLink]="['showAllCustomers']">Show All Customers</a>  -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<hr/><hr/>
+</button>
+<hr/> <hr/>
 <router-outlet name="mphasis"></router-outlet>
+</div>
+</body>
+</html>

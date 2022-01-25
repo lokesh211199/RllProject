@@ -1,14 +1,22 @@
-<p>vendor-login works!</p>
-
+<!doctype html>
+<html>
+    <body>
+         <div class="bg-img"> 
+            <form action="/action_page.php" class="container">
+<h2>SIGN IN TO YOUR ACCOUNT!</h2>
 <form (ngSubmit)="logMe()">
-    Select Vendor Name : 
+    <b> Select Vendor Name : </b>
     <select [(ngModel)]="vendorid" name="vendorId">
         <option *ngFor="let v of vendors" value={{v.vendorid}}>
             {{v.vendorname}}
         </option>
     </select> <br/><br/> 
-    Password : 
+   <b> Password : </b>
     <input type="password" name="passWord" [(ngModel)]="passcode" /> 
     <br/><br/> 
-    <input type="submit" value="Login" />
+    <button type="submit" class="btn"> Signin </button>
 </form>
+            </form>
+         </div>
+    </body>
+</html>

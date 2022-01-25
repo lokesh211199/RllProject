@@ -1,0 +1,14 @@
+<h3>ACCEPT OR REJECT-ORDER WORKS!</h3>
+<body>
+Order Id : 
+ <input type="number" name="oid" [(ngModel)]="oid" /> <br/>
+Vendor Id:
+<input type="number" name="vid" [(ngModel)]="vid" /> <br/>
+Status : 
+<select name="status" [(ngModel)]="status">
+    <option value="YES">Yes</option>
+    <option value="NO">No</option>
+</select>
+<br/>
+<input type="button" value="Proceed" (click)="acceptOrReject()" />
+</body>

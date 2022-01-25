@@ -2,24 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Customer } from './customer';
+import { Menu } from './menu';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class MenuService {
 
   constructor(private _http: HttpClient) { }
 
-  showCustomer(): Observable<Customer []> {
-    return this._http.get<Customer[]>("http://localhost:8282/showCustomer")
+  showMenu(restaurantid : number): Observable<Menu[]> {
+    return this._http.get<Menu[]>("http://localhost:8282/showMenu/"+restaurantid)
       .pipe(
         tap(data =>
         console.log('All: ' + JSON.stringify(data)))
       );
   }
-  searchCustomer(customerid : number): Observable<Customer> {
-    return this._http.get<Customer>("http://localhost:8282/searchCustomer/"+customerid)
+
+  searchByMenuId(menuid : number): Observable<Menu> {
+    return this._http.get<Menu>("http://localhost:8282/searchMenu/"+menuid)
       .pipe(
         tap(data =>
         console.log('All: ' + JSON.stringify(data)))

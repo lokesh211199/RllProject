@@ -1,27 +1,35 @@
-<p>vendor-pending-orders works!</p>
-<table border="3" align="center">
+<h2 id = "heading">Vendor Pending Orders</h2>
+<style>
+    table,th,td { table-layout: 2px solid cadetblue;
+    }
+</style>
+<table class="data-table" *ngIf = "orders.length > 0">
     <tr>
-        <th>Order ID</th>
-        <th>Vendor Id</th>
-        <th>Customer Id</th>
-        <th>Menu Id</th>
-        <th>Wallet Id</th>
-        <th>Order Date</th>
-        <th>Quantity Ordered</th>
-        <th>Order Status</th>
-        <th>Bill Amount</th>
-        <th>Comments</th>
+        <th> Order ID </th>
+        <th> Vendor ID  </th>
+        <th> Customer ID </th>
+        <th> Menu ID </th>
+        <th> Wallet ID </th>
+        <th> Order Date </th>
+        <th> Quantity Ordered </th>
+        <th> Order Status </th>
+        <th> Bill Amount </th>
+        <th> Comments </th>
+        <th>Accept/Reject</th>
     </tr>
-    <tr *ngFor="let v of orders">
-        <td>{{v.orderid}} </td>
-        <td>{{v.vendorid}} </td>
-        <td>{{v.customerid}} </td>
-        <td>{{v.menuid}} </td>
-        <td>{{v.walletid}} </td>
-        <td>{{v.orderdate}} </td>
-        <td>{{v.quantityordered}} </td>
-        <td>{{v.orderstatus}} </td>
-        <td>{{v.billamount}} </td>
-        <td>{{v.comments}} </td>
+
+    <tr *ngFor = "let o of orders">
+        <td> {{o.orderid}} </td>
+        <td> {{o.vendorid}}  </td>
+        <td> {{o.customerid}} </td>
+        <td> {{o.menuid}} </td>
+        <td> {{o.walletid}} </td>
+        <td> {{o.orderdate}} </td>
+        <td> {{o.quantityordered}} </td>
+        <td> {{o.orderstatus}} </td>
+        <td> {{o.billamount}} </td>
+        <td> {{o.comments}} </td>
+        <td><input type="button" value="Place Order" (click)="acceptOrReject(o.orderid, o.vendorid)" /> </td>
     </tr>
 </table>
+<h3 id = "info" *ngIf = "orders.length == 0">There are no pending orders.</h3>

@@ -1,0 +1,6 @@
+th,td {
+    background-color: goldenrod;
+    color: black;
+    border-color: black;
+    border-image-outset: initial;
+}

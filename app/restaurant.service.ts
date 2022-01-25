@@ -11,7 +11,7 @@ export class RestaurantService {
   constructor(private _http: HttpClient) { }
 
   showRestaurant(): Observable<Restaurant []> {
-    return this._http.get<Restaurant []>("http://localhost:8282/restshow")
+    return this._http.get<Restaurant []>("http://localhost:8282/showRestaurant")
       .pipe(
         tap(data =>
         console.log('All: ' + JSON.stringify(data)))
